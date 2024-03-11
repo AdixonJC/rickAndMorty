@@ -1,0 +1,152 @@
+@font-face {
+  font-family: Rick-and-morty;
+  src: url("../fonts/get_schwifty.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+:root {
+  /** font family */
+  --rickAnDmorty: Rick-and-morty;
+  --monserrat: monserrat;
+  /* CSS HEX */
+  --phosphorescent-green: #84ff00ff;
+  --light-blue: #3777ffff;
+  --dark-blue: #040887ff;
+  --hot-magenta: #e236cbff;
+  --black: #000000ff;
+
+  /* CSS HSL */
+  --darkAlpha: hsla(89, 100%, 50%, 0.1);
+  --phosphorescent-green: hsla(89, 100%, 50%, 1);
+  --light-blue: hsla(221, 100%, 61%, 1);
+  --dark-blue: hsla(238, 94%, 27%, 1);
+  --hot-magenta: hsla(308, 75%, 55%, 1);
+  --black: hsla(0, 0%, 0%, 1);
+
+  /** variables helpers */
+  --log: solid 2px red;
+
+  /*^ animations */
+
+  /*TODO animation Floating start */
+  --floating: floating 1s linear alternate infinite;
+}
+@property --animateDeg {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotate {
+  0% {
+    --animateDeg: 0deg;
+  }
+  100% {
+    --animateDeg: 360deg;
+  }
+}
+
+@property --animatePos {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes translatePos {
+  0% {
+    --animatePos: 0%;
+  }
+  100% {
+    --animatePos: 100%;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0px, 7px);
+    text-shadow: 0px 0px 0px var(--phosphorescent-green);
+  }
+  100% {
+    transform: translate(0px, 0);
+    text-shadow: 0px 0px 20px var(--phosphorescent-green);
+  }
+}
+/*TODO animation Floating end */
+
+/*? class helpers */
+.cosmicBackground {
+  background: linear-gradient(
+    var(--animateDeg),
+    var(--hot-magenta),
+    var(--light-blue),
+    var(--darkAlpha)
+  );
+  animation: rotate 5s linear infinite;
+  color: rgb(0, 234, 255);
+}
+/*&  reset styles*/
+
+body {
+  font-family: var(--monserrat);
+  background: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h3 {
+  font-family: var(--rickAnDmorty);
+  -webkit-text-stroke: 0.5px greenyellow;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
