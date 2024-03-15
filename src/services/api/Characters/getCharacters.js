@@ -9,5 +9,4 @@ const getCharacters = (pageNumber = "") => {
     })
 }
 
-
 export default getCharacters
