@@ -21,7 +21,9 @@
 }
 
 .input {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     margin: 6px;
     width: 24px;
     height: 24px;
