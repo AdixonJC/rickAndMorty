@@ -7,7 +7,7 @@
     border-radius: 20px;
     overflow: hidden;
     animation: rotate 5s linear infinite;
-    color: rgb(0, 234, 255);
+    color: var(--brightBlue);
 }
 
 

@@ -7,6 +7,7 @@ import "./home.css";
 import Card from "../Card/Card";
 import { formatDateDMY } from "../../services/utils/commonFunctions/formatDateDMY";
 import Pagination from "../Pagination/Pagination";
+import Filter from "../Filter/Filter";
 const Home = () => {
   const dispatch = useDispatch();
 
@@ -15,10 +16,13 @@ const Home = () => {
   useEffect(() => {
     dispatch(getAllCharacters());
   }, [dispatch]);
-  
+
+
   return (
-    <div>
-      <header></header>
+    <div className="home__container">
+      <header>
+        <Filter/>
+      </header>
       <div className="characters__container">
         {characters.results !== undefined &&
           characters.results.map((character) => {
@@ -38,12 +42,12 @@ const Home = () => {
             );
           })}
 
+      </div>
           <footer>
             <Pagination
              totalPages={info.pages}
             />
           </footer>
-      </div>
     </div>
   );
 };

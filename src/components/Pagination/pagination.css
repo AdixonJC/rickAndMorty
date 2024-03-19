@@ -1,0 +1,37 @@
+.pagination__container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  /* border: var(--log); */
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.pagination__container span {
+    padding: 5px 25px;
+    margin: 0 10px;
+    font-family: var(--rickAndMorty);
+    font-weight: 900;
+    font-size: 1.2em;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.numbers__pages__container > button {
+    padding: 5px 25px;
+    margin: 0 4px;
+    font-family: var(--rickAndMorty);
+    font-weight: 900;
+    font-size: 1em;
+    background: linear-gradient(var(--animateDeg), var(--hot-magenta),var(--light-blue), var(--darkAlpha));
+    animation: rotate 5s linear infinite;
+    color: #fff;
+    border: none;
+    transition: box-shadow .3s, transform .3s;
+}
+
+.numbers__pages__container > button:hover {
+    box-shadow: 0 3px 10px 2px #fff;
+    cursor: pointer;
+    transform: translate(0px, -2px);
+}

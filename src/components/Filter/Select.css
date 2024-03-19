@@ -1,0 +1,15 @@
+.select__container select {
+    appearance: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease
+}
+
+.select__container select:hover {
+    background-color: #f0f0f0;
+}
+
+.select__container select:active {
+    background-color: #cecece;
+}

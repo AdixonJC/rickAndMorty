@@ -1,0 +1,42 @@
+.portal__container {
+
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.boxRotate {
+    background: url("/public/images/portal.png") no-repeat center center;
+    height: 90%;
+    width: 90%;
+    background-size: contain;
+    transform: rotate(0);
+    animation: rotateS 10s linear infinite;
+    position: absolute;
+}
+
+@keyframes rotateS {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+h2 {
+    font-family:var(--rickAndMorty);
+    font-size: 2.5em;
+    background: linear-gradient(45deg, var(--hot-magenta)20%,var(--light-blue) 40%, var(--phosphorescent-green));
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 0.001px rgb(0, 234, 255);
+    animation: var(--floating);
+    text-align: center;
+    z-index: 1;
+}

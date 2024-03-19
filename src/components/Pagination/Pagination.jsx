@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCharacters, setCurrentPage, setNextPage } from "../../store/slices/characterSlices/characterSlice";
+import "./pagination.css"
 const Pagination = ({ totalPages }) => {
   const dispatch = useDispatch();
   const [visiblePages, setVisiblePages] = useState([])
@@ -41,7 +42,7 @@ const Pagination = ({ totalPages }) => {
       dispatch(setNextPage(nextPageNumber))
       dispatch(setCurrentPage(nextPageNumber))
     }
-  console.log(nextPage);
+    
   const handlePrevPage = () => {
     const prevPageNumber = parseInt(prevPage.split("=").pop())
       dispatch(setNextPage(prevPageNumber))
@@ -52,25 +53,24 @@ const Pagination = ({ totalPages }) => {
   const handlePageClick = (pageNumber) => {
     dispatch(setCurrentPage(pageNumber))
   }
-  
-
-  console.log({ nextPage, prevPage, currentPage, visiblePages });
 
   return (
-    <div>
+    <div className="pagination__container">
+      <div className="numbers__pages__container">
       <button onClick={handlePrevPage} disabled={currentPage === 1}>Prev</button>
       {visiblePages.map(page => (
-        <button key={page} onClick={() => handlePageClick(page)}>{page}</button>
+        <button className="buttons__pagination" key={page} onClick={() => handlePageClick(page)}>{page}</button>
       ))}
       {
         currentPage + Math.floor(visiblePages.length / 2) < totalPages && (
           <span>...</span>
         )
       }
-      <span>
-        Page {currentPage} of {totalPages}
-      </span>
       <button onClick={handleNextPage}  disabled={currentPage === totalPages}>Next</button>
+      </div>
+      <span>
+        Page {currentPage} / {totalPages}
+      </span>
     </div>
   );
 };

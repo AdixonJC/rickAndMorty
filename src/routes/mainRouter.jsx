@@ -1,7 +1,7 @@
 import React from "react";
 import { createHashRouter } from "react-router-dom";
 import Home from "../components/Home/Home";
-import Profile from "../components/Profile";
+import {Episodes, Location} from "../components";
 import App from "../App";
 
 const routerConfig = [
@@ -11,11 +11,15 @@ const routerConfig = [
     children:[
       {
         path: "characters",
-        element: <Home />,
+        element: <Home/>,
       },
       {
         path: "locations",
-        element: <Profile />,
+        element: <Location />,
+      },
+      {
+        path: "Episodes",
+        element: <Episodes/>,
       }
     ]
   },

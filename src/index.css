@@ -49,7 +49,7 @@
 
 :root {
   /** font family */
-  --rickAnDmorty: Rick-and-morty;
+  --rickAndMorty: Rick-and-morty;
   --monserrat: monserrat;
   /* CSS HEX */
   --phosphorescent-green: #84ff00ff;
@@ -65,6 +65,10 @@
   --dark-blue: hsla(238, 94%, 27%, 1);
   --hot-magenta: hsla(308, 75%, 55%, 1);
   --black: hsla(0, 0%, 0%, 1);
+
+  /* CSS RGBA */
+
+  --brightBlue:rgb(0, 234, 255);
 
   /** variables helpers */
   --log: solid 2px red;
@@ -131,13 +135,14 @@
 
 body {
   font-family: var(--monserrat);
-  background: url("./images/background.jpg");
+  background: #1a1a1a;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 h3 {
-  font-family: var(--rickAnDmorty);
+  font-family: var(--rickAndMorty);
   -webkit-text-stroke: 0.5px greenyellow;
   letter-spacing: 3px;
   font-weight: 100;
@@ -149,4 +154,25 @@ h3 {
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+}
+
+/*? scroll barr styles */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0)2e2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brightBlue);
+  background: linear-gradient(var(--animateDeg), var(--hot-magenta),var(--light-blue), var(--brightBlue));
+}
+
+
+::-webkit-scrollbar-button {
+  display: none;
+  
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Route, Routes } from "react-router-dom";
 import "./nav.css";
+import Home from "../Home/Home";
 const Nav = () => {
   return (
     <>
@@ -22,6 +23,9 @@ const Nav = () => {
           </ul>
         </nav>
       </div>
+        <Routes>
+          <Route index path="/" element={<Home/>}/>
+        </Routes>
     </>
   );
 };
